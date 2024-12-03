@@ -1,48 +1,57 @@
 html {
     scroll-behavior: smooth !important;
-  }
+}
 
-.col-centered
-{
+.col-centered {
     position: relative;
     margin-left: auto;
     margin-right: auto;
 }
 
 .no-select {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                               supported by Chrome, Edge, Opera and Firefox */
+    user-select: none; /* Prevent text selection */
 }
 
-.contact-me-inactive
-{
-
-    bottom:-100%;
+.contact-me-inactive {
+    display: none; /* Completely hide the pane when inactive */
 }
 
-.contact-me-active
-{
-    bottom:0px;
+.contact-me-active {
+    position: fixed; /* Keep it fixed at the bottom */
+    left: 0;
+    right: 0;
+    bottom: 0; /* Position at bottom */
+    z-index: 1000; /* Ensure it's above other elements */
 }
 
-.custom-textarea
-{
-  height:210px;
+.custom-textarea {
+    height: 210px;
 }
 
-.nav-top-hidden
-{
+.nav-top-hidden {
     top: -160px;
 }
 
-.nav-top-visible
-{
-    top:0px;
+.nav-top-visible {
+    top: 0px;
+}
+
+/* Other existing styles... */
+
+.offscreen-nav-hidden {
+    right: -100% !important;
+}
+
+.offscreen-nav {
+    position: fixed;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    color: inherit; 
+    text-decoration: inherit; 
 }
 
 .underline--magical {

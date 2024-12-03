@@ -118,17 +118,17 @@ function openContact()
     toggleContactMe("show");
 }
 
-function toggleContactMe(action)
-{
-    if(action == "show")
-    {
-        $("#contact-me-pane").removeClass("contact-me-inactive");
-        $("#contact-me-pane").addClass("contact-me-active");
-    }
-    else if(action == "hide")
-    {
-        $("#contact-me-pane").addClass("contact-me-inactive");
-        $("#contact-me-pane").removeClass("contact-me-active");
+function toggleContactMe(action) {
+    var contactPane = document.getElementById('contact-me-pane');
+
+    if (action === "show") {
+        contactPane.classList.remove("contact-me-inactive");
+        contactPane.classList.add("contact-me-active");
+        document.body.style.overflow = "hidden"; // Prevent body scrolling
+    } else if (action === "hide") {
+        contactPane.classList.remove("contact-me-active");
+        contactPane.classList.add("contact-me-inactive");
+        document.body.style.overflow = "";  // Restore body scrolling
     }
 }
 
